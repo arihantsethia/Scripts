@@ -1,3 +1,5 @@
+#This code parse xml from LinkedIn API response to give public info about registered companies on LinkedIn
+
 import oauth2 as oauth
 import urlparse
 import urllib
