@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+#This code parse xml from LinkedIn Page response to give public info about registered companies on LinkedIn
+#This script takes time to parse the page. For quicker results have a look at LinkedIn_API.py
 from bs4 import BeautifulSoup
 import urllib 
 
@@ -11,7 +13,9 @@ content = ["Type","Company Size","Website","Industry","Founded"]
 text = '"LinkedInId","Name","Type","Company Size","Website","Industry","Founded","Headquarters", \n '
 f = open('companylist_(1-10000).csv', 'a') 
 f.write(text) 
-for j in range(1006,10000) :
+start_id = 1000
+end_id = 1100
+for j in range(start_id,end_id) :
 	temp ='';
 	sock = urllib.urlopen("http://www.linkedin.com/companies/%s"%(j)) 
 	htmlSource =sock.read()            
